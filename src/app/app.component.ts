@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StudentService } from './student.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ StudentService ]
 })
 export class AppComponent {
-  title = 'app';
+   constructor(private studentService:StudentService){ }
+
+  title = 'CSCI-31 Student Roster';
+  studentList = null;
+
+  ngOnInit() {
+    this.studentList = this.studentService.listStudents();
+  }
 }
