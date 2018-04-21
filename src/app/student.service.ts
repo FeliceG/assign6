@@ -11,7 +11,8 @@ studentList = [
      last: 'Gardner',
      address: '87 Blossomcrest Road',
      city: 'Lexington',
-     state: 'MA'
+     state: 'MA',
+     registered: true
   },
   {
       _id: 2,
@@ -19,7 +20,8 @@ studentList = [
       last: 'Gardner',
       address: '87 Blossomcrest Road',
       city: 'Lexington',
-      state: 'MA'
+      state: 'MA',
+      registered: true
   },
   {
       _id: 3,
@@ -27,7 +29,8 @@ studentList = [
       last: 'Gardner',
       address: '87 Blossomcrest Road',
       city: 'Lexington',
-      state: 'MA'
+      state: 'MA',
+      registered: true
   }
 ];
 
@@ -38,8 +41,8 @@ constructor() { }
   }
 
   //"getOne" method, returns item from the array with _id == id
-  getStudent(id){
-     return this.studentList.find((el)=>{return el._id == id});
+    getStudent(id){
+      return this.studentList.find((el)=>{return el._id == id});
   }
 
 }

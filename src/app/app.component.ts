@@ -10,10 +10,10 @@ import { StudentService } from './student.service';
 export class AppComponent {
    constructor(private studentService:StudentService){ }
 
-  title = 'CSCI-31 Student Roster';
-  studentList = null;
+   title = 'CSCI-31 Student Roster';
+   studentList = [];
 
   ngOnInit() {
-    this.studentList = this.studentService.listStudents();
-  }
+     this.studentList = this.studentService.listStudents();
+ }
 }

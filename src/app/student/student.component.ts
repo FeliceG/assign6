@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-student',
@@ -8,14 +7,16 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-//getNumberOfStudents(){
-//  return this.studentList.length;
-//}
+  @Input() student;
+  @Output() studentEvent = new EventEmitter<string>();
 
-  @Input() title;
-  constructor() {
-       this.title = '[ newTitle ]'
-}
+  constructor() {}
+
+  handleClick(event, student){
+    console.log("view contact:", student.first, student.registered);
+    this.student.registered = false;
+  }
+
 
   ngOnInit() {
   }
